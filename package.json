@@ -1,5 +1,5 @@
 {
-  "name": "react-native-set-app-icon",
+  "name": "@sampension/react-native-set-app-icon",
   "title": "React Native Set App Icon",
   "version": "0.0.9",
   "description": "Set app icon inside your application",
@@ -18,8 +18,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EQuimper/react-native-set-app-icon.git",
-    "baseUrl": "https://github.com/EQuimper/react-native-set-app-icon"
+    "url": "git+https://github.com/sampension/react-native-set-app-icon.git",
+    "baseUrl": "https://github.com/sampension/react-native-set-app-icon"
   },
   "keywords": [
     "react-native"

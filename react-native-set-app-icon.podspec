@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   # s.license    = { :type => "MIT", :file => "LICENSE" }
   s.authors      = { "Your Name" => "quimperemanuel@gmail.com" }
   s.platforms    = { :ios => "9.0" }
-  s.source       = { :git => "https://github.com/EQuimper/react-native-set-app-icon.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/sampension/react-native-set-app-icon.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,c,m,swift}"
   s.requires_arc = true
