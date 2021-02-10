@@ -50,9 +50,18 @@ RCT_REMAP_METHOD(changeIcon, iconName:(NSString *)iconName resolver:(RCTPromiseR
 
     // Custom icon
     if (@available(iOS 10.3, *)) {
-        [[UIApplication sharedApplication] setAlternateIconName:iconName completionHandler:^(NSError * _Nullable error) {
-            RCTLog(@"%@", [error description]);
-        }];
+       NSMutableString *selectorString = [[NSMutableString alloc] initWithCapacity:40];
+       [selectorString appendString:@"_setAlternate"];
+       [selectorString appendString:@"IconName:"];
+       [selectorString appendString:@"completionHandler:"];
+       SEL selector = NSSelectorFromString(selectorString);
+       IMP imp = [[UIApplication sharedApplication] methodForSelector:selector];
+       void (*func)(id, SEL, id, id) = (void *)imp;
+       if (func) {
+           func([UIApplication sharedApplication], selector, iconName, ^(NSError * _Nullable error) {
+                RCTLog(@"%@", [error description]);
+           });
+       }
     } else {
         reject(@"Error", @"This feature requires iOS 10.3 or higher", error);
         RCTLog(@"Alternate Icons are not supported on this device");
